@@ -1,0 +1,13 @@
+package asignment1;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String line = "pagecounts-20160802-050000.gz";
+		String[] o = line.split("-");
+		System.out.println((o[2].split(".")));
+	}
+
+}
