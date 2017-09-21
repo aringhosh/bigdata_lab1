@@ -9,4 +9,5 @@
 <fullyQualifiedTypeName name="LongPairWritable"/>
 <fullyQualifiedTypeName name="org.apache.hadoop.io.IntWritable"/>
 <fullyQualifiedTypeName name="MultiLineJSONInputFormat"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.lib.output.NullOutputFormat"/>
 </qualifiedTypeNameHistroy>

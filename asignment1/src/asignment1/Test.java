@@ -16,27 +16,33 @@ public class Test {
 //		System.out.println(filename);
 		
 		
-		ObjectMapper json_mapper = new ObjectMapper();
-		 
-		String input_string = "{\"archived\": true, \"author\": \"[deleted]\", \"author_flair_css_class\": null, \"author_flair_text\": null, "
-				+ "\"body\": \"[deleted]\", \"controversiality\": 0, \"created_utc\": \"1229580549\", \"distinguished\": null, \"downs\": 0, "
-				+ "\"edited\": false, \"gilded\": 0, \"id\": \"3b\", \"link_id\": \"t3_7k40r\", \"name\": \"t1_3b\", \"parent_id\": \"t1_c06vu5i\", "
-				+ "\"retrieved_on\": 1428217154, \"score\": 1, \"score_hidden\": false, \"subreddit\": \"canada\", \"subreddit_id\": \"t5_2qh68\", "
-				+ "\"ups\": 1}";
-		JsonNode data = null;
-		try {
-			data = json_mapper.readValue(input_string, JsonNode.class);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println(data.get("subreddit").textValue());
-		System.out.println(data.get("score").longValue());
+//		ObjectMapper json_mapper = new ObjectMapper();
+//		 
+//		String input_string = "{\"archived\": true, \"author\": \"[deleted]\", \"author_flair_css_class\": null, \"author_flair_text\": null, "
+//				+ "\"body\": \"[deleted]\", \"controversiality\": 0, \"created_utc\": \"1229580549\", \"distinguished\": null, \"downs\": 0, "
+//				+ "\"edited\": false, \"gilded\": 0, \"id\": \"3b\", \"link_id\": \"t3_7k40r\", \"name\": \"t1_3b\", \"parent_id\": \"t1_c06vu5i\", "
+//				+ "\"retrieved_on\": 1428217154, \"score\": 1, \"score_hidden\": false, \"subreddit\": \"canada\", \"subreddit_id\": \"t5_2qh68\", "
+//				+ "\"ups\": 1}";
+//		JsonNode data = null;
+//		try {
+//			data = json_mapper.readValue(input_string, JsonNode.class);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		System.out.println(data.get("subreddit").textValue());
+//		System.out.println(data.get("score").longValue());
+//		
+//		double average = 0;
+//		double score_total = 5.362778;
+//		int _comments = 8;
+//		average = (score_total / _comments);
+//		System.out.println(average);
 		
-		double average = 0;
-		double score_total = 5.362778;
-		int _comments = 8;
-		average = (score_total / _comments);
-		System.out.println(average);
+		
+		// Euler
+		 java.util.Random r = new  java.util.Random();
+		 for(int i=0;i<10; i++)
+			 System.out.println(r.nextDouble());
 	}
 
 }
