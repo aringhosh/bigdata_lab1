@@ -27,7 +27,7 @@ public class MultiLineJSONInputFormat extends TextInputFormat {
 				TaskAttemptContext context) throws IOException {
 			linereader.initialize(genericSplit, context);
 		}
-		
+
 		private String jsonText = "";
 		@Override
 		public boolean nextKeyValue() throws IOException {
@@ -36,24 +36,25 @@ public class MultiLineJSONInputFormat extends TextInputFormat {
 			boolean res = linereader.nextKeyValue();
 			current_key = linereader.getCurrentKey();
 			current_value = linereader.getCurrentValue();
-			
+
 			if(current_value == null) return res;
-			
+
 			String cv = current_value.toString();
-			if(cv.equals("{")) {
-				jsonText = "{";
+
+			if(cv.startsWith("{")) {
+				jsonText = cv;
 				nextKeyValue();
 			}
-			else if(!cv.equals("}")) {
+			else if(!cv.endsWith("}")) {
 				jsonText = jsonText + cv;
 				nextKeyValue();
 			}
 			else { // ends with } 
 				jsonText = jsonText + cv;
 			}
-			
+
 			current_value = new Text(jsonText);
-			
+
 			return res;
 		}
 
